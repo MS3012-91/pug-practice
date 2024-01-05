@@ -1,18 +1,21 @@
 mixin link (source, name, isArrow)
-    li 
-        a  
-            img(src= source, alt="navigate icon")
-            p= name
-            if isArrow
-                img(src="images/chevron-right-2.svg", alt="arrow")
+    li(key="name")
+        a 
+            .navigate-element
+                .main-elements
+                    img(src= source, alt="navigate icon" class="navigate-icons" class="navigate-icons")
+                    p= name
+                if isArrow
+                    img(src="images/chevron-right-2.svg", alt="arrow" class="navigate-arrow")
 
 .aside 
     header
         .logo
-            a(href="#") 
-                img(src="images/logo.svg", alt="logo")
+            a.logo-link(href="#") 
+            img(src="images/logo.svg", alt="logo") 
+            .logo-text
                 p Dashboard 
-                span v.01
+                    span v.01
     main
         nav 
             ul.nav 
@@ -23,10 +26,11 @@ mixin link (source, name, isArrow)
                 +link ("images/discount-shape-1.svg", "Promote", true)
                 +link ("images/message-question-1.svg", "Help", true)
     footer 
-        img(src="images/userPhoto.jpg", alt="user photo")
-        .userInfo 
-        p= userName 
-        p Project Manager
+        .user-block
+            img(src="images/userPhoto.jpg", alt="user photo")
+            .userInfo 
+                p= userName 
+                p Project Manager
 
 
 

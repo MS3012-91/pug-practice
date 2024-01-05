@@ -1,7 +1,7 @@
 -
     var pageTitle = 'Dashboard'
     var userName ='Evano'
-
+    var screenWidth = 1523
 
 doctype html
 html(lang="en")
@@ -9,10 +9,14 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title= pageTitle
-        //- style 
-        //-     include styles/styles.scss
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap")
+        link(rel="stylesheet", href="../styles/styles.css")
     body 
-        aside
-            include modules/aside
+        if screenWidth < 768
+            header
+                include modules/header
+        else 
+            aside   
+                include modules/aside
         section
             include modules/customersSection

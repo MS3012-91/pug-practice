@@ -1,0 +1,19 @@
+-const navigation = ["Dashboard", "Product", "Customers", "Income", "Promote", "Promote"]
+mixin options (name)
+    option(value=name) 
+        a(href="#")
+            =name
+
+.header 
+    .logo
+        a.logo-link(href="#") 
+            img(src="images/logo.svg", alt="logo")
+            .logo-text 
+                p Dashboard 
+                    span v.01
+    .nav-list
+        select
+            each nav in navigation
+                +options(nav)
+    .userInfo
+        img(src="images/userPhoto.jpg", alt="user photo")

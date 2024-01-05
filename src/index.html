@@ -4,36 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="../styles/styles.css">
   </head>
   <body> 
-    <aside>
+    <aside>  
       <div class="aside"> 
         <header>
-          <div class="logo"><a href="#"> <img src="images/logo.svg" alt="logo">
-              <p>Dashboard </p><span>v.01</span></a></div>
+          <div class="logo"><a class="logo-link" href="#"> </a><img src="images/logo.svg" alt="logo">
+            <div class="logo-text">
+              <p>Dashboard <span>v.01</span></p>
+            </div>
+          </div>
         </header>
         <main>
           <nav> 
             <ul class="nav"> 
-                    <li> <a> <img src="images/db-icon.svg" alt="navigate icon">
-                        <p>Dashboard</p></a></li>
-                    <li> <a> <img src="images/d-square-1.svg" alt="navigate icon">
-                        <p>Product</p><img src="images/chevron-right-2.svg" alt="arrow"></a></li>
-                    <li> <a> <img src="images/user-square-1.svg" alt="navigate icon">
-                        <p>Customers</p><img src="images/chevron-right-2.svg" alt="arrow"></a></li>
-                    <li> <a> <img src="images/wallet-money-2.svg" alt="navigate icon">
-                        <p>Income</p><img src="images/chevron-right-2.svg" alt="arrow"></a></li>
-                    <li> <a> <img src="images/discount-shape-1.svg" alt="navigate icon">
-                        <p>Promote</p><img src="images/chevron-right-2.svg" alt="arrow"></a></li>
-                    <li> <a> <img src="images/message-question-1.svg" alt="navigate icon">
-                        <p>Help</p><img src="images/chevron-right-2.svg" alt="arrow"></a></li>
+                    <li key="name"><a> 
+                        <div class="navigate-element">
+                          <div class="main-elements"><img class="navigate-icons navigate-icons" src="images/db-icon.svg" alt="navigate icon">
+                            <p>Dashboard</p>
+                          </div>
+                        </div></a></li>
+                    <li key="name"><a> 
+                        <div class="navigate-element">
+                          <div class="main-elements"><img class="navigate-icons navigate-icons" src="images/d-square-1.svg" alt="navigate icon">
+                            <p>Product</p>
+                          </div><img class="navigate-arrow" src="images/chevron-right-2.svg" alt="arrow">
+                        </div></a></li>
+                    <li key="name"><a> 
+                        <div class="navigate-element">
+                          <div class="main-elements"><img class="navigate-icons navigate-icons" src="images/user-square-1.svg" alt="navigate icon">
+                            <p>Customers</p>
+                          </div><img class="navigate-arrow" src="images/chevron-right-2.svg" alt="arrow">
+                        </div></a></li>
+                    <li key="name"><a> 
+                        <div class="navigate-element">
+                          <div class="main-elements"><img class="navigate-icons navigate-icons" src="images/wallet-money-2.svg" alt="navigate icon">
+                            <p>Income</p>
+                          </div><img class="navigate-arrow" src="images/chevron-right-2.svg" alt="arrow">
+                        </div></a></li>
+                    <li key="name"><a> 
+                        <div class="navigate-element">
+                          <div class="main-elements"><img class="navigate-icons navigate-icons" src="images/discount-shape-1.svg" alt="navigate icon">
+                            <p>Promote</p>
+                          </div><img class="navigate-arrow" src="images/chevron-right-2.svg" alt="arrow">
+                        </div></a></li>
+                    <li key="name"><a> 
+                        <div class="navigate-element">
+                          <div class="main-elements"><img class="navigate-icons navigate-icons" src="images/message-question-1.svg" alt="navigate icon">
+                            <p>Help</p>
+                          </div><img class="navigate-arrow" src="images/chevron-right-2.svg" alt="arrow">
+                        </div></a></li>
             </ul>
           </nav>
         </main>
-        <footer> <img src="images/userPhoto.jpg" alt="user photo">
-          <div class="userInfo"> </div>
-          <p>Evano</p>
-          <p>Project Manager</p>
+        <footer> 
+          <div class="user-block"><img src="images/userPhoto.jpg" alt="user photo">
+            <div class="userInfo"> 
+              <p>Evano</p>
+              <p>Project Manager</p>
+            </div>
+          </div>
         </footer>
       </div>
     </aside>
