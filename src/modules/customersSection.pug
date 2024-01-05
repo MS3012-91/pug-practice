@@ -1,0 +1,133 @@
+-
+    let tableHead = ["Customer Name", "Company", "Phone Number", "Email", "Country", "Status"];
+    let users = [
+        {
+        "id": 1,
+        "full_name": "Anna-diane Franz",
+        "email": "afranz0@wufoo.com",
+        "company": "Quatz",
+        "country": "Sweden",
+        "tel": "509-07-5615",
+        "isActive": true,
+        },
+        {
+        "id": 2,
+        "full_name": "Roanne Grigorey",
+        "email": "rgrigorey1@oaic.gov.au",
+        "company": "Devpoint",
+        "country": "Argentina",
+        "tel": "634-61-9885",
+        "isActive": false,
+        },
+         {
+        "id": 3,
+        "full_name": "Inge Colleck",
+        "email": "icolleck2@ameblo.jp",
+        "company": "Skinte",
+        "country": "Peru",
+        "tel": "631-76-3939",
+        "isActive": false,
+        },
+        {
+        "id": 4,
+        "full_name": "Katee Stollenberg",
+        "email": "kstollenberg3@zimbio.com",
+        "company": "Tagchat",
+        "country": "Uzbekistan",
+        "tel": "133-67-9219",
+        "isActive": true,
+        },
+        {
+        "id": 5,
+        "full_name": "Eleonora McTiernan",
+        "email": "emctiernan4@mac.com",
+        "company": "Livepath",
+        "country": "China",
+        "tel": "129-64-1350",
+        "isActive": true,
+        },
+        {
+        "id": 6,
+        "full_name": "Booth McCallion",
+        "email": "bmccallion5@smugmug.com",
+        "company": "Brainsphere",
+        "country": "Japan",
+        "tel": "389-03-9142",
+        "isActive": true,
+        }, 
+        {
+        "id": 7,
+        "full_name": "Dolly Sabater",
+        "email": "dsabater6@miibeian.gov.cn",
+        "company": "Trilia",
+        "country": "Indonesia",
+        "tel": "765-79-8628",
+        "isActive": true,
+        },
+        {
+        "id": 8,
+        "full_name": "Jorgan Father",
+        "email": "jfather7@addtoany.com",
+        "company": "Flipstorm",
+        "country": "Russia",
+        "tel": "729-19-2954",
+        "isActive": false,
+        },
+    ];
+    let totalEntries = "256K";
+    let firstElem = 1;
+    let lastElem = 8;
+//- users, totalEntries, firstElem, lastElem отримуємо з сервера
+
+.mainSection    
+    p.greeting
+        | Hello 
+        | userName
+        | &#x1F44B;
+        | ,
+    .table 
+        .table-head
+            caption 
+                p All Customers 
+                p Active Members
+            .search
+                .search-item 
+                    img(src="images/search 1.svg", alt="Search icon")
+                input(type="search", name="search" placeholder = 'Search')
+        table
+            thead 
+                tr 
+                    each header in tableHead  
+                        td= header
+            tbody
+            each user in users
+                tr 
+                    td= user.full_name
+                    td= user.company
+                    td= user.tel
+                    td= user.email
+                    td= user.country
+                    td 
+                        button(type="button", class=(user.isActive ? 'active' : 'inactive')) 
+                            if user.isActive 
+                                | Active 
+                            else 
+                                | Inactive
+            tfoot 
+                tr 
+                    .table-footer
+                        td 
+                            p Showing data #{firstElem} to #{lastElem} of #{totalEntries} entries
+                        td 
+                            .buttons
+                                button(type="button") 
+                                    img(src="images/left-arrow.svg", alt="Go to previous page")
+                                .buttons-wrapper
+                                    - for (var x = 1; x < 41; x++)
+                                        button(type="button") #{x}    
+                                button(type="button") 
+                                    img(src="images/right-arrow.svg", alt="Go to next page")
+                            
+
+
+                    

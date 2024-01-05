@@ -1,0 +1,34 @@
+mixin link (source, name, isArrow)
+    li 
+        a  
+            img(src= source, alt="navigate icon")
+            p= name
+            if isArrow
+                img(src="images/chevron-right-2.svg", alt="arrow")
+
+.aside 
+    header
+        .logo
+            a(href="#") 
+                img(src="images/logo.svg", alt="logo")
+                p Dashboard 
+                span v.01
+    main
+        nav 
+            ul.nav 
+                +link ("images/db-icon.svg", "Dashboard", false)
+                +link ("images/d-square-1.svg", "Product", true)
+                +link ("images/user-square-1.svg", "Customers", true)
+                +link ("images/wallet-money-2.svg", "Income", true)
+                +link ("images/discount-shape-1.svg", "Promote", true)
+                +link ("images/message-question-1.svg", "Help", true)
+    footer 
+        img(src="images/userPhoto.jpg", alt="user photo")
+        .userInfo 
+        p= userName 
+        p Project Manager
+
+
+
+
+
