@@ -143,12 +143,13 @@ main {
     .table {
         background-color: $background-table;
         border-radius: 30px;
-        width: 90%;
+        width: 968px;
         padding: 28px 38px;
         display: flex;
         flex-direction: column;
-        position: relative;
-        left: 2vw;
+        position: absolute;
+        left: 71px;
+        top: 128px;
         line-height: 1.5;
         table {
             border-collapse: collapse;
