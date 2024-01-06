@@ -62,30 +62,34 @@ select {
 body {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
+@media screen and (min-width: 1440px) {
+  body {
+    flex-direction: row;
+  }
+}
 .logo {
   display: flex;
   flex-direction: row;
 }
-
-.logo-link {
+.logo .logo-link {
   text-decoration: none;
   color: #000000;
   font-weight: 600;
 }
-
-.logo-text {
+.logo .logo-link .logo-text {
   display: flex;
   flex-direction: row;
   align-items: last baseline;
   padding-left: 11px;
 }
-
-span {
+.logo .logo-link .logo-text span {
   color: #838383;
   font-weight: 500;
   font-size: 10px;
@@ -99,18 +103,14 @@ span {
   align-items: last baseline;
   padding: 10px;
 }
-
-.nav-list {
-  display: none;
+.header .nav-list {
   border-radius: 5px;
   border: none;
 }
-
-select {
+.header .nav-list select {
   border: none;
 }
-
-option {
+.header .nav-list select option {
   font-weight: 500;
 }
 
@@ -118,8 +118,7 @@ option {
   width: 306px;
   height: 100dvh;
 }
-
-.logo {
+.aside .logo {
   padding-top: 36px;
   padding-left: 26px;
   font-size: 26px;
@@ -129,12 +128,10 @@ option {
 main {
   margin-top: 40px;
 }
-
-.nav {
+main .nav {
   color: #9197b3;
 }
-
-.navigate-element {
+main .nav .navigate-element {
   width: 100%;
   padding: 8px 28px;
   display: flex;
@@ -142,18 +139,24 @@ main {
   align-items: center;
   justify-content: space-between;
 }
-
-.main-elements {
+main .nav .navigate-element:hover {
+  background-color: #5932ea;
+  color: #fff;
+}
+main .nav .navigate-element:hover img {
+  stroke: white;
+  fill: white;
+  filter: invert(60%) sepia(0%) saturate(175%) hue-rotate(100deg) brightness(200%) contrast(100%);
+}
+main .nav .navigate-element .main-elements {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
-.navigate-icons {
+main .nav .navigate-element .navigate-icons {
   margin: 12px;
 }
-
-.navigate-arrow {
+main .nav .navigate-element .navigate-arrow {
   margin-right: 9px;
 }
 
@@ -164,16 +167,204 @@ main {
   display: flex;
   flex-direction: row;
 }
-
-.userInfo {
+.user-block .userInfo {
   padding: 2px;
 }
-
-p:first-child {
+.user-block .userInfo p:first-child {
   font-weight: 500;
 }
-
-p:last-child {
+.user-block .userInfo p:last-child {
   font-weight: 12px;
   color: #757575;
+}
+
+.main-section {
+  background-color: #eee;
+  width: 100vw;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.main-section .greeting {
+  font-weight: 500;
+  font-size: 24px;
+  padding: 41px 0 51px 71px;
+  align-self: flex-start;
+}
+.main-section .table {
+  background-color: #fff;
+  border-radius: 30px;
+  width: 90%;
+  padding: 28px 38px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 2vw;
+  line-height: 1.5;
+}
+.main-section .table table {
+  border-collapse: collapse;
+  min-width: 100%;
+  width: auto;
+  letter-spacing: -0.4px;
+  display: grid;
+  position: relative;
+  top: 16px;
+  grid-template-columns: minmax(100px, 1.6fr) minmax(100px, 1.2fr) minmax(100px, 1.4fr) minmax(100px, 1.9fr) minmax(100px, 1.1fr) minmax(100px, 1fr);
+}
+.main-section .table thead, .main-section .table tbody, .main-section .table tr {
+  display: contents;
+}
+.main-section .table td {
+  padding: 20px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.14px;
+  box-sizing: border-box;
+}
+.main-section .table .table-caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: last baseline;
+}
+.main-section .table .table-caption .caption-text {
+  align-items: flex-start;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.22px;
+}
+.main-section .table .table-caption .caption-text span {
+  color: #16c098;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.14px;
+}
+.main-section .table .table-caption .search-item {
+  border: 1px solid #b5b7c0;
+  border-radius: 10px;
+  height: 38px;
+  width: 216px;
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  right: 18px;
+  top: -6px;
+  background-color: #f9fbff;
+}
+.main-section .table .table-caption .search-item input {
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #b5b7c0;
+  width: calc(100% - 40px);
+  height: 100%;
+  background-color: #f9fbff;
+  position: absolute;
+  right: 0;
+}
+.main-section .table .table-caption .search-item img {
+  position: absolute;
+  padding: 7px 8px;
+  top: 0;
+  left: 0;
+}
+.main-section .table thead {
+  color: #b5b7c0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  width: 100%;
+}
+.main-section .table thead::after {
+  content: "";
+  position: absolute;
+  top: 56px;
+  left: -38px;
+  width: calc(100% + 82px);
+  height: 1px;
+  background-color: #eee;
+}
+.main-section .table tbody {
+  color: #292d32;
+  font-size: 14px;
+  font-weight: 500;
+}
+.main-section .table tbody tr {
+  width: 100%;
+  height: 69px;
+}
+.main-section .table tbody td {
+  border-bottom: 1px solid #eee;
+}
+.main-section .table tbody .btn {
+  height: 29px;
+  width: 80px;
+  border-radius: 4px;
+}
+.main-section .table tbody .btn.active {
+  background-color: rgba(22, 192, 152, 0.38);
+  color: #008767;
+  border: 1px solid #00b087;
+}
+.main-section .table tbody .btn.inactive {
+  background-color: #ffc5c5;
+  color: #df0404;
+  border: 1px solid #df0404;
+}
+.main-section .table-footer {
+  height: 61px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.main-section .table-footer p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #b5b7c0;
+  letter-spacing: -0.14px;
+}
+.main-section .table-footer .buttons {
+  width: 271px;
+  display: flex;
+  position: relative;
+}
+.main-section .table-footer .buttons .buttons-wrapper {
+  width: 195px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.main-section .table-footer .buttons .buttons-wrapper .buttons-container {
+  display: inline;
+  width: 195px;
+}
+.main-section .table-footer .footer-buttons {
+  background-color: #f5f5f5;
+  color: #404b52;
+  border: 1px solid #eee;
+  height: 24px;
+  width: 26px;
+  text-align: center;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.main-section .table-footer .footer-buttons:hover {
+  background-color: #5932ea;
+  color: #fff;
+}
+.main-section .table-footer .footer-buttons:hover a {
+  color: #fff;
+}
+.main-section .table-footer .footer-buttons a {
+  text-decoration: none;
+  color: #404b52;
 }/*# sourceMappingURL=styles.css.map */

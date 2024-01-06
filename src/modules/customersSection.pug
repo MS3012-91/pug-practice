@@ -77,57 +77,52 @@
     let totalEntries = "256K";
     let firstElem = 1;
     let lastElem = 8;
-//- users, totalEntries, firstElem, lastElem отримуємо з сервера
+    let currentPage = 1;
+    let totalPageCount = 40;
+//- users, totalEntries, firstElem, lastElem, currentPage отримуємо з сервера
 
-.mainSection    
-    p.greeting
-        | Hello 
-        | userName
-        | &#x1F44B;
-        | ,
-    .table 
-        .table-head
-            caption 
-                p All Customers 
-                p Active Members
-            .search
-                .search-item 
-                    img(src="images/search 1.svg", alt="Search icon")
-                input(type="search", name="search" placeholder = 'Search')
-        table
+.main-section   
+    .greeting 
+        p
+            | Hello #{userName} &#x1F44B;,
+    .table  
+        .table-caption
+            .caption-text All Customers 
+                            br 
+                            span Active Members              
+            .search-item 
+                img(src="images/search 1.svg", alt="Search icon")
+                input(type="search", name="search" placeholder = 'Search')                          
+        table     
             thead 
                 tr 
                     each header in tableHead  
                         td= header
             tbody
-            each user in users
-                tr 
-                    td= user.full_name
-                    td= user.company
-                    td= user.tel
-                    td= user.email
-                    td= user.country
-                    td 
-                        button(type="button", class=(user.isActive ? 'active' : 'inactive')) 
-                            if user.isActive 
-                                | Active 
-                            else 
-                                | Inactive
-            tfoot 
-                tr 
-                    .table-footer
+                each user in users
+                    tr 
+                        td= user.full_name
+                        td= user.company
+                        td= user.tel
+                        td= user.email
+                        td= user.country
                         td 
-                            p Showing data #{firstElem} to #{lastElem} of #{totalEntries} entries
-                        td 
-                            .buttons
-                                button(type="button") 
-                                    img(src="images/left-arrow.svg", alt="Go to previous page")
-                                .buttons-wrapper
-                                    - for (var x = 1; x < 41; x++)
-                                        button(type="button") #{x}    
-                                button(type="button") 
-                                    img(src="images/right-arrow.svg", alt="Go to next page")
-                            
-
-
-                    
+                            button(type="button", class=((user.isActive ? 'active' : 'inactive') + ' btn')) 
+                                if user.isActive 
+                                    | Active 
+                                else 
+                                    | Inactive               
+        .table-footer 
+            p Showing data #{firstElem} to #{lastElem} of #{totalEntries} entries
+            .buttons
+                button(type="button" class="footer-buttons") <
+                .buttons-wrapper
+                    .buttons-container
+                        - for (var x = 1; x < totalPageCount; x++)
+                            .footer-buttons
+                                a(href="#" class="footer-buttons" & (currentPage?'active-footer-button': '')) #{x}
+                        //- button(type="button" class="footer-buttons" & (currentPage?'active-footer-button': ''))     
+                .footer-buttons
+                    a(href="#" class="footer-buttons" & (currentPage?'active-footer-button': '')) #{totalPageCount}
+                .footer-buttons
+                    button(type="button" class="footer-buttons") >
